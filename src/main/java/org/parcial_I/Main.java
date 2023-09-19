@@ -20,6 +20,14 @@ public class Main {
         /* 
         Ciudad ABM
          */
+        
+//       CREATE TABLE Ciudad (
+//    Id serial PRIMARY KEY,
+//    Ciudad VARCHAR(255),
+//    Departamento VARCHAR(255),
+//    Postal_Code INTEGER
+//); 
+    
 //        CiudadService ciudadService = new CiudadService("postgres", "root", "localhost", "5432", "postgres");
 //        CiudadModels ciudad = new CiudadModels();
 //        ciudad.Id = 1;
@@ -42,6 +50,20 @@ public class Main {
         /* 
         Persona ABM
          */
+        
+//CREATE TABLE Persona (
+//    Id serial PRIMARY KEY,
+//    IdCiudad INTEGER REFERENCES Ciudad (Id),
+//    Nombre VARCHAR(255),
+//    Apellido VARCHAR(255),
+//    TipoDocumento VARCHAR(50),
+//    NroDocumento VARCHAR(20),
+//    Direccion VARCHAR(255),
+//    Celular VARCHAR(15),
+//    Email VARCHAR(255),
+//    Estado VARCHAR(20)
+//);        
+        
 //        PersonaService personaService = new PersonaService("postgres", "root", "localhost", "5432", "postgres");
 //        PersonaModels persona = new PersonaModels();
 //        persona.Id = 1;
@@ -72,6 +94,15 @@ public class Main {
         /* 
         Cliente ABM
          */
+        
+//CREATE TABLE Cliente (
+//    IdCliente serial PRIMARY KEY,
+//    IdPersona INTEGER REFERENCES Persona (Id),
+//    FechaIngreso TIMESTAMP,
+//    Clasificacion VARCHAR(255),
+//    Estado VARCHAR(20)
+//);        
+        
 //        ClienteService clienteService = new ClienteService("postgres", "root", "localhost", "5432", "postgres");
 //        ClienteModels cliente = new ClienteModels();
 //        cliente.IdCliente = 0;
@@ -95,6 +126,21 @@ public class Main {
         /* 
         Cuentas ABM
          */
+        
+//CREATE TABLE Cuentas (
+//    Id serial PRIMARY KEY,
+//    IdCliente INTEGER REFERENCES Cliente (IdCliente),
+//    NroCuenta VARCHAR(255),
+//    FechaAlta TIMESTAMP,
+//    TipoCuenta VARCHAR(255),
+//    Estado VARCHAR(20),
+//    Saldo DECIMAL,
+//    NroContrato VARCHAR(255),
+//    CostoMantenimiento DECIMAL,
+//    PromedioAcreditacion VARCHAR(255),
+//    Moneda VARCHAR(20)
+//);        
+        
 //        CuentasService cuentasService = new CuentasService("postgres", "root", "localhost", "5432", "postgres");
 //        CuentasModels cuentas = new CuentasModels();
 //        cuentas.Id = 1;
@@ -127,33 +173,47 @@ public class Main {
         /* 
         Movimientos ABM
          */
-        MovimientosService movimientosService = new MovimientosService("postgres", "root", "localhost", "5432", "postgres");
-        MovimientosModels movimientos = new MovimientosModels();
-        movimientos.IdMovimiento = 1;
-        movimientos.IdCuenta = 1;
-        movimientos.FechaMovimiento = Date.valueOf("2003-01-06");
-        movimientos.TipoMovimiento = "Ventas";
-        movimientos.SaldoAnterior = 1000.05;
-        movimientos.SaldoActual = 2000.9;
-        movimientos.MontoMovimiento = 100.4;
-        movimientos.CuentaOrigen = 123456789;
-        movimientos.CuentaDestino = 987654321;
-        movimientos.Canal = 123;
+        
+//CREATE TABLE Movimientos (
+//    IdMovimiento serial PRIMARY KEY,
+//    IdCuenta INTEGER REFERENCES Cuentas (Id),
+//    FechaMovimiento TIMESTAMP,
+//    TipoMovimiento VARCHAR(255),
+//    SaldoAnterior DECIMAL,
+//    SaldoActual DECIMAL,
+//    MontoMovimiento DECIMAL,
+//    CuentaOrigen DECIMAL,
+//    CuentaDestino DECIMAL,
+//    Canal DECIMAL
+//);        
+        
+//        MovimientosService movimientosService = new MovimientosService("postgres", "root", "localhost", "5432", "postgres");
+//        MovimientosModels movimientos = new MovimientosModels();
+//        movimientos.IdMovimiento = 1;
+//        movimientos.IdCuenta = 1;
+//        movimientos.FechaMovimiento = Date.valueOf("2003-01-06");
+//        movimientos.TipoMovimiento = "Ventas";
+//        movimientos.SaldoAnterior = 1000.05;
+//        movimientos.SaldoActual = 2000.9;
+//        movimientos.MontoMovimiento = 100.4;
+//        movimientos.CuentaOrigen = 123456789;
+//        movimientos.CuentaDestino = 987654321;
+//        movimientos.Canal = 123;
 //        movimientosService.registrarMovimientos(movimientos);
 //        movimientosService.modificarMovimientos(movimientos);
 //        movimientosService.eliminarMovimientos(movimientos);
-        movimientos = movimientosService.consultarMovimientosPorId(movimientos.IdMovimiento);
-
-        if (movimientos != null) {
-            System.out.println("Movimiento encontrada:");
-            System.out.println("Id del movimiento: " + movimientos.IdMovimiento);
-            System.out.println("Numero de la cuenta asociada: " + movimientos.IdCuenta);
-            System.out.println("Fecha del movimiento: " + movimientos.FechaMovimiento);
-            System.out.println("Tipo de movimiento: " + movimientos.TipoMovimiento);
-            System.out.println("Monto del movimiento: " + movimientos.MontoMovimiento);
-        } else {
-            System.out.println("Movimiento no encontrada.");
-        }
+//        movimientos = movimientosService.consultarMovimientosPorId(movimientos.IdMovimiento);
+//
+//        if (movimientos != null) {
+//            System.out.println("Movimiento encontrada:");
+//            System.out.println("Id del movimiento: " + movimientos.IdMovimiento);
+//            System.out.println("Numero de la cuenta asociada: " + movimientos.IdCuenta);
+//            System.out.println("Fecha del movimiento: " + movimientos.FechaMovimiento);
+//            System.out.println("Tipo de movimiento: " + movimientos.TipoMovimiento);
+//            System.out.println("Monto del movimiento: " + movimientos.MontoMovimiento);
+//        } else {
+//            System.out.println("Movimiento no encontrada.");
+//        }
     }
 
 }
