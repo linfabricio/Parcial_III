@@ -1,4 +1,4 @@
-package org.example.Infraestructure.Conections;
+package org.parcial_I.Infraestructure.Conections;
 
 import java.sql.*;
 import java.util.logging.Level;

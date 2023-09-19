@@ -1,8 +1,9 @@
-package org.example.Infraestructure.Models;
-import java.util.Date;
+package org.parcial_I.Infraestructure.Models;
+
 public class PersonaModels {
 
-    public int IdPersona;
+    public int Id;
+    public Integer IdCiudad;
     public String Nombre;
     public String Apellido;
     public String TipoDocumento;
@@ -10,7 +11,6 @@ public class PersonaModels {
     public String Direccion;
     public String Celular;
     public String Email;
-    public Date FechaNacimiento;
-    public String estado;
+    public String Estado;
 
 }
