@@ -1,7 +1,7 @@
-package org.parcial_I.Infraestructure.DbManagment.contactos;
+package org.parcial_II.Infraestructure.DbManagment.contactos;
 
-import org.parcial_I.Infraestructure.Conections.Conexiones;
-import org.parcial_I.Infraestructure.Models.ClienteModels;
+import org.parcial_II.Infraestructure.Conections.Conexiones;
+import org.parcial_II.Infraestructure.Models.ClienteModels;
 
 import java.sql.SQLException;
 

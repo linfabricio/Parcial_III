@@ -1,4 +1,4 @@
-package org.parcial_I.Infraestructure.Models;
+package org.parcial_II.Infraestructure.Models;
 
 public class CiudadModels {
 

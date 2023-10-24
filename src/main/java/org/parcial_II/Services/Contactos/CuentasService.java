@@ -1,7 +1,7 @@
-package org.parcial_I.Services.Contactos;
+package org.parcial_II.Services.Contactos;
 
-import org.parcial_I.Infraestructure.DbManagment.contactos.Cuentas;
-import org.parcial_I.Infraestructure.Models.CuentasModels;
+import org.parcial_II.Infraestructure.DbManagment.contactos.Cuentas;
+import org.parcial_II.Infraestructure.Models.CuentasModels;
 
 public class CuentasService {
 

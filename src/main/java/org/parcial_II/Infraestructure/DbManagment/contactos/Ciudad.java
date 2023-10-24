@@ -1,7 +1,7 @@
-package org.parcial_I.Infraestructure.DbManagment.contactos;
+package org.parcial_II.Infraestructure.DbManagment.contactos;
 
-import org.parcial_I.Infraestructure.Conections.Conexiones;
-import org.parcial_I.Infraestructure.Models.CiudadModels;
+import org.parcial_II.Infraestructure.Conections.Conexiones;
+import org.parcial_II.Infraestructure.Models.CiudadModels;
 
 import java.sql.SQLException;
 
@@ -14,7 +14,6 @@ public class Ciudad {
     }
 
     public String registrarCiudad(CiudadModels ciudad) {
-
         try {
             conexion.setQuerySQL(conexion.conexionDB().createStatement());
             String sqlCiudad = "INSERT INTO Ciudad ("
@@ -71,7 +70,8 @@ public class Ciudad {
             if (conexion.getResultadoQuery().next()) {
                 ciudad.Ciudad = conexion.getResultadoQuery().getString("Ciudad");
                 ciudad.Departamento = conexion.getResultadoQuery().getString("Departamento");
-
+                ciudad.Postal_Code = conexion.getResultadoQuery().getInt("Postal_Code");
+                
                 return ciudad;
             }
         } catch (SQLException e) {

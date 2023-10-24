@@ -1,7 +1,7 @@
-package org.parcial_I.Services.Contactos;
+package org.parcial_II.Services.Contactos;
 
-import org.parcial_I.Infraestructure.DbManagment.contactos.Movimientos;
-import org.parcial_I.Infraestructure.Models.MovimientosModels;
+import org.parcial_II.Infraestructure.DbManagment.contactos.Movimientos;
+import org.parcial_II.Infraestructure.Models.MovimientosModels;
 
 public class MovimientosService {
 

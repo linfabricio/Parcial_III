@@ -1,7 +1,7 @@
-package org.parcial_I.Services.Contactos;
+package org.parcial_II.Services.Contactos;
 
-import org.parcial_I.Infraestructure.DbManagment.contactos.Ciudad;
-import org.parcial_I.Infraestructure.Models.CiudadModels;
+import org.parcial_II.Infraestructure.DbManagment.contactos.Ciudad;
+import org.parcial_II.Infraestructure.Models.CiudadModels;
 
 public class CiudadService {
 
@@ -15,14 +15,14 @@ public class CiudadService {
         if (validarDatos(ciudad)) {
             return ciudadDB.registrarCiudad(ciudad);
         }
-        return "Ocurrió algún error, favor verificar los datos o comunicar con administrador";
+        return null;
     }
 
     public String modificarCiudad(CiudadModels ciudad) {
         if (validarDatos(ciudad)) {
             return ciudadDB.modificarCiudad(ciudad);
         }
-        return "Ocurrió algún error, favor verificar los datos o comunicar con administrador";
+        return null;
     }
 
     public String eliminarCiudad(CiudadModels ciudad) {

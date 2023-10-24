@@ -1,7 +1,7 @@
-package org.parcial_I.Services.Contactos;
+package org.parcial_II.Services.Contactos;
 
-import org.parcial_I.Infraestructure.DbManagment.contactos.Cliente;
-import org.parcial_I.Infraestructure.Models.ClienteModels;
+import org.parcial_II.Infraestructure.DbManagment.contactos.Cliente;
+import org.parcial_II.Infraestructure.Models.ClienteModels;
 
 public class ClienteService {
 
@@ -15,21 +15,21 @@ public class ClienteService {
         if (validarDatos(cliente)) {
             return clienteDB.registrarCliente(cliente);
         }
-        return "Ocurrió algún error, favor verificar los datos o comunicar con administrador";
+        return null;
     }
 
     public String modificarCliente(ClienteModels cliente) {
         if (validarDatos(cliente)) {
             return clienteDB.modificarCliente(cliente);
         }
-        return "Ocurrió algún error, favor verificar los datos o comunicar con administrador";
+        return null;
     }
-    
-        public String eliminarCliente(ClienteModels cliente) {
+
+    public String eliminarCliente(ClienteModels cliente) {
         if (validarDatos(cliente)) {
             return clienteDB.eliminarCliente(cliente);
         }
-        return "Ocurrió algún error, favor verificar los datos o comunicar con administrador";
+        return null;
     }
 
     public ClienteModels consultarClientePorId(int id) {
